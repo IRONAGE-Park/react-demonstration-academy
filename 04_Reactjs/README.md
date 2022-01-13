@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# 04 - `React.js`란?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> 2022.01.13(목)
 
-## Available Scripts
+## `npx`를 통한 `Create React App`(`CRA`) 구성
 
-In the project directory, you can run:
+- 터미널, CMD에서 프로젝트 폴더를 생성할 위치(예시는 바탕화면)에서 다음 명령어를 실행합니다.
 
-### `yarn start`
+```shell
+npx create-react-app <프로젝트 명>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+npm init react-app <프로젝트 명>
+yarn create react-app <프로젝트 명>
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 세 명령어 중 하나를 실행하면 현재 위치에서 <프로젝트 명>에 해당하는 폴더에 `CRA` 환경이 구성됩니다.
 
-### `yarn test`
+## `npm` 혹은 `yarn`을 통해 개발 서버 실행
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `cd <프로젝트 명>`을 통해 프로젝트 폴더로 이동한 후, `npm start` 혹은 `yarn start`를 입력하면 `localhost:3000`으로 브라우저가 열리면서 `CRA` 프로젝트의 개발 환경이 실행됩니다.
+- 개발 환경은 `localhost:3000`에 개발 서버를 열고, `react-hot-loader`를 통해 프로젝트 `/src` 폴더 내의 파일이 수정되면 새로고침합니다.
+- `localhost:3000`에서 응답 받는 `HTML` 파일은(브라우저로 접속하는 행위는 `GET` 방식으로 요청하는 행위와 같으므로) `/public` 폴더 내의 `index.html`에, `/src` 폴더 내의 있는 `index.js` 파일을 임시 빌드한 `JavaScript` 코드를 주입한 `HTML` 파일입니다.
 
-### `yarn build`
+> `Node.js`와 `npm` 그리고 `yarn`의 버전이 제각각인 경우 `yarn`과 제대로 호환되지 않을 수 있습니다.  
+> 이 경우를 방지하기 위해, 가급적 최신 버전을 사용하시는 것이 좋습니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 프로젝트 설명
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 프로젝트의 엔트리 포인트(`entry point`, 시작점)은 `index.js`입니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 명령어
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `npm run start`(`npm start`, `yarn start`) 명령어는 현재 프로젝트의 `React` 개발 서버를 실행합니다.
+- `npm run build`(`yarn build`) 명령어는 현재 프로젝트를 빌드하여 배포 가능한 파일을 생성합니다.
+- `npm run test`(`yarn test`) 명령어는 현재 프로젝트에 테스트 코드(`src/App.test.js`)를 실행합니다.
+- `npm run eject`(`yarn eject`) 명령어는 현재 프로젝트의 숨겨져 있는 구성 파일을 꺼냅니다.(취소하기 힘듭니다.)
