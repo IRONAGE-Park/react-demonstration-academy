@@ -1,7 +1,9 @@
 import "./App.css";
+// CSS 파일을 불러옴
 import ConditionRender from "./ConditionRender";
 import InputComponent from "./InputComponent";
-// CSS 파일을 불러옴
+// 커스텀 컴포넌트를 작성함
+// .js(jsx) 파일이지만 경로 입력 시 .js를 제외하더라도 상관 없음
 import logo from "./logo.svg";
 // SVG 파일(벡터 이미지)을 불러옴
 // (이 logo는 후에 logo.svg의 위치 문자열로 변하므로 <img src={logo} />와 같이 지정 가능)
