@@ -1,10 +1,12 @@
 {
   "name": "03_node",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node.js practice.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node process.js",
+    "async": "node async.js",
+    "sync": "node sync.js",
     "robot": "node robot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
