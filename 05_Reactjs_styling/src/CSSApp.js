@@ -19,6 +19,10 @@ function CSSApp() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
       </header>
+      <div className="div">
+        <p>이건 외부 스타일 시트의 스타일 요소가 적용된 태그입니다.</p>
+        <p>이 요소는 public/index.html 파일에서 불러온 expand_style.css가 적용됨.</p>
+      </div>
     </div>
   );
 }
