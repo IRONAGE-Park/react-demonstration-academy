@@ -1,7 +1,9 @@
-import logo from './logo.svg';
-import styles from './App.module.scss';
+import logo from "./logo.svg";
+import styles from "./SCSSModuleApp.module.scss";
+// Module SCSS 파일의 클래스 명을 객체로 가져옴
 
-function App() {
+// SCSS Module 로드 방식을 사용한 컴포넌트
+function SCSSModuleApp() {
   return (
     <div className={styles.App}>
       <header className={styles["App-header"]}>
@@ -14,4 +16,4 @@ function App() {
   );
 }
 
-export default App;
+export default SCSSModuleApp;
