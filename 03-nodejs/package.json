@@ -1,5 +1,5 @@
 {
-  "name": "03_node",
+  "name": "03-nodejs",
   "version": "1.0.0",
   "description": "Node.js practice.",
   "main": "index.js",
