@@ -8,6 +8,12 @@
 - `@mui/material`과 `@emotion`을 설치.
 
 ```shell
+npm install @mui/material @emotion/react @emotion/styled
+```
+
+또는
+
+```shell
 yarn add @mui/material @emotion/react @emotion/styled
 ```
 
@@ -22,22 +28,22 @@ yarn add @mui/material @emotion/react @emotion/styled
 
 ## `JavaScript`에서 `Array` 다루기
 
-- [/useArray.js](./useArray.js)
+- [`/useArray.js`](./useArray.js)
 
   - 배열을 다루는 예시 코드
 
 ## 폴더 구조
 
-- [/src/index.js](./src/index.js)
+- [`/src/index.js`](./src/index.js)
 
   - `CRA` 프로젝트의 엔트리 포인트
   - 프로젝트의 루트 컴포넌트인 `App.js`를 렌더링하고, `GlobalStyle`을 적용함
 
-- [/src/index.style.js](./src/index.style.js)
+- [`/src/index.style.js`](./src/index.style.js)
 
   - 프로젝트의 애플리케이션에 전역으로 적용될 `CSS`를 `@emotion`을 통해 작성
 
-- [/src/App.js](./src/App.js)
+- [`/src/App.js`](./src/App.js)
 
   - 프로젝트의 루트 컴포넌트
   - 클래스형 컴포넌트와 함수형 컴포넌트 예시를 선택적으로 렌더링
@@ -47,22 +53,22 @@ yarn add @mui/material @emotion/react @emotion/styled
   - `LifeCycleCheck` 렌더 유무를 `useState`를 통해 상태로 저장
   - `LifeCycleCheck` 렌더 유무를 변경하는 함수 `onRender` 선언
 
-- [/src/App.style.js](./src/App.style.js)
+- [`/src/App.style.js`](./src/App.style.js)
 
   - 루트 컴포넌트에서 사용할 스타일 컴포넌트 정의
   - `App`의 큰 레이아웃(중앙 정렬)과 배경색
   - 좌측 상단 알림 텍스트 스타일 정의
 
-- [/src/components/LifeCycleCheck.jsx](./src/components/LifeCycleCheck.jsx)
+- [`/src/components/LifeCycleCheck.jsx`](./src/components/LifeCycleCheck.jsx)
 
   - `React`의 `Life Cycle`에 대해 탐구하는 컴포넌트
   - 렌더 함수의 간략한 실행 매커니즘과 `useState`, `useEffect`를 활용한 예시
 
-- [/src/components/ClassCheckbox.jsx](./src/components/ClassCheckbox.jsx)
+- [`/src/components/ClassCheckbox.jsx`](./src/components/ClassCheckbox.jsx)
 
   - 클래스형 컴포넌트의 렌더 코드
 
-- [/src/components/FunctionCheckbox.jsx](./src/components/FunctionCheckbox.jsx)
+- [`/src/components/FunctionCheckbox.jsx`](./src/components/FunctionCheckbox.jsx)
 
   - 함수형 컴포넌트의 렌더 코드
   - `props`와 렌더링의 관계, 전달 방법
@@ -72,7 +78,7 @@ yarn add @mui/material @emotion/react @emotion/styled
   - `Array` 데이터를 반복하여 컴포넌트 렌더링
   - `memo` 함수를 통해 `props` 의외의 변화에 재렌더 하지 않는 컴포넌트 작성
 
-- [/src/components/Checkbox.style.js](./src/components/Checkbox.style.js)
+- [`/src/components/Checkbox.style.js`](./src/components/Checkbox.style.js)
 
   - `Checkbox` 컴포넌트에서 사용할 스타일 컴포넌트 정의
   - 리스트를 출력할 때 사용하기 좋은 `SCSS` 문법
