@@ -8,7 +8,7 @@
 - `@mui/material`과 `@emotion`을 설치.
 
 ```shell
-yarn add @mui/marterial @emotion/react @emotion/styled
+yarn add @mui/material @emotion/react @emotion/styled
 ```
 
 - [`@mui/material` 공식 웹사이트](https://mui.com/)
