@@ -16,8 +16,8 @@
 ### 참고
 
 - [절대 경로와 상대 경로](https://velog.io/@ryurbsgks5114/%EC%A0%88%EB%8C%80%EA%B2%BD%EB%A1%9C%EC%99%80-%EC%83%81%EB%8C%80%EA%B2%BD%EB%A1%9C)
-- [Windows 기본 명령어](https://library1008.tistory.com/42)
-- [유닉스(macOS, linux) 기본 명령어](https://cailisin.tistory.com/127)
+- [`Windows` 기본 명령어](https://library1008.tistory.com/42)
+- [유닉스(`macOS`, `linux`) 기본 명령어](https://cailisin.tistory.com/127)
 
 ## `node` 명령어
 
@@ -46,6 +46,7 @@
 ## 프로젝트 설명
 
 - 프로젝트를 다운 받으신 후에는 `/node_modules`가 포함되어 있지 않기 때문에 `npm install`을 입력하여 의존 중인 모듈을 다운로드 받습니다.
+- `Node.js`의 실행 방법과 기본 객체 `process`, 기본 모듈(`fs`, `path`) 그리고 `npm` 모듈인 `robotjs`를 테스트하는 프로젝트입니다.
 
 ### 명령어
 
@@ -54,3 +55,24 @@
 - `npm run sync` 명령어는 `sync.js` 파일을 실행합니다.
 - `npm run robot` 명령어는 `robot.js` 파일을 실행합니다.
 - `npm run test` 명령어는 `"Error: no test specified"`를 출력합니다.
+
+## 폴더 구조
+
+- [`/process.js`](./process.js)
+
+  - `Node.js`의 객체인 `process` 실습 코드
+
+- [`/async.js`](./async.js)
+
+  - `path` 모듈을 통해 경로를 생성하는 방법
+  - `fs` 모듈을 사용하여 비동기적으로 파일 읽기, 쓰기 함수를 호출하고, 결과를 콜백 함수로 받는 소스 코드
+
+- [`/sync.js`](./sync.js)
+
+  - `path` 모듈을 통해 경로를 생성하는 방법
+  - `fs` 모듈을 사용하여 동기적으로 파일 읽기, 쓰기 함수를 호출하고, 반환 값으로 결과를 받는 소스 코드
+
+- [`/robotjs.js`](./async.js)
+
+  - `robotjs` 외부 모듈을 이용해 `sin` 그래프를 따라서 마우스 커서를 이동시키는 소스 코드
+  - `/node_modules` 폴더에 `robotjs` 모듈이 설치되어 있지 않으면 실행 불가

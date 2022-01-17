@@ -1,5 +1,5 @@
 /**
- * robotjs 모듈을 통해 마우스 커서를 sin 그래프를 따라 이동시키는 소스 코드
+ * robotjs 모듈을 통해 sin 그래프를 따라 마우스 커서를 이동시키는 소스 코드
  */
 const robot = require("robotjs");
 // robotjs 모듈을 불러온다.
