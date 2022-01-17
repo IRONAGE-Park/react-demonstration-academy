@@ -58,31 +58,22 @@ yarn add -D http-proxy-middleware
 
 ## 폴더 구조
 
-- [`/src/index.js`](./src/index.js)
-
-  - `CRA` 프로젝트의 엔트리 포인트
-  - 프로젝트의 루트 컴포넌트인 `App.js`를 렌더링하고, `GlobalStyle`을 적용함
-
-- [`/src/index.style.js`](./src/index.style.js)
-
-  - 프로젝트의 애플리케이션에 전역으로 적용될 `CSS`를 `@emotion`을 통해 작성
-
 - [`/src/App.js`](./src/App.js)
 
   - 프로젝트의 루트 컴포넌트
   - `process.env`의 값 확인
-  - `RequestTest` 컴포넌트 렌더링
-  - `MovieContainer` 컴포넌트 렌더링
+  - [`RequestTest`](./src/components/RequestTest.jsx) 컴포넌트 렌더링
+  - [`MovieContainer`](./src/containers/MovieContainer.jsx) 컴포넌트 렌더링
 
 - [`/src/App.style.js`](./src/App.style.js)
 
   - 루트 컴포넌트에서 사용할 스타일 컴포넌트 정의
-  - `App`의 큰 레이아웃(중앙 정렬)과 배경색
+  - [`App`](./src/App.js)의 큰 레이아웃(중앙 정렬)과 배경색
 
 - [`/src/containers/MovieContainer.jsx`](./src/containers/MovieContainer.jsx)
 
   - `mount` 시에 외부 `API`를 호출하며, 응답 받을 때까지 로딩 상태 출력
-  - 응답 받은 데이터를 상태로 관리하여 `Movies` 컴포넌트 렌더링
+  - 응답 받은 데이터를 상태로 관리하여 [`Movies`](./src/components/Movie.jsx) 컴포넌트 렌더링
 
 - [`/src/components/RequestTest.jsx`](./src/components/RequestTest.jsx)
 
@@ -102,6 +93,6 @@ yarn add -D http-proxy-middleware
 
 - [`/src/apis/fetch.js`](./src/apis/fetch.js)
 
-    - `fetch API`를 통해 외부 `API`에 데이터 요청하는 함수
-    - `async await`를 사용해 콜백 함수 형태를 제거함
-    - `process.env.REACT_APP_이름`으로 환경 변수 사용
+  - `fetch API`를 통해 외부 `API`에 데이터 요청하는 함수
+  - `async await`를 사용해 콜백 함수 형태를 제거함
+  - `process.env.REACT_APP_이름`으로 환경 변수 사용
