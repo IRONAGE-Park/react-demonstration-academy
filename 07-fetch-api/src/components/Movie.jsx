@@ -6,7 +6,7 @@ const Movie = ({ title, subtitle, image, link, director }) => {
   return (
     <div>
       <a href={link}>
-        <image src={image} alt="image" />
+        <img src={image} alt="movie-thumbnail" />
         <h3>{title}</h3>
         <h4>{subtitle}</h4>
         <p>감독: {director}</p>
