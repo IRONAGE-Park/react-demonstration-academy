@@ -26,9 +26,9 @@
 - [TCP SCHOOL CSS 강좌](http://www.tcpschool.com/css/intro)
 - [생활코딩 CSS 강좌](https://opentutorials.org/course/2418)
 
-## `React.js`의 네이밍
+## `React`의 네이밍
 
-- `React.js`에서는 일반적인 `HTML`, `JavaScript`에서 사용하는 어트리뷰트, 프로퍼티의 이름을 사용하지 않고 카멜 케이스(`camelCase`)의 이름을 사용합니다.
+- `React`에서는 일반적인 `HTML`, `JavaScript`에서 사용하는 어트리뷰트, 프로퍼티의 이름을 사용하지 않고 카멜 케이스(`camelCase`)의 이름을 사용합니다.
 - 컴포넌트의 이름의 경우 파스칼 케이스(`PascalCase`)를 사용합니다.
 - 또한 `JavaScript` 예약어(`class`, `for` 등)의 경우, 이름을 그대로 사용하지 않고 변환된 이름을 사용합니다.
 
@@ -36,11 +36,11 @@
 
 - [이름 표기법](https://velog.io/@leyuri/%ED%91%9C%EA%B8%B0%EB%B2%95-%EC%8A%A4%EB%84%A4%EC%9D%B4%ED%81%AC-%EC%BC%80%EC%9D%B4%EC%8A%A4-%ED%8C%8C%EC%8A%A4%EC%B9%BC-%EC%BC%80%EC%9D%B4%EC%8A%A4-%EC%B9%B4%EB%A9%9C-%EC%BC%80%EC%9D%B4%EC%8A%A4)
 
-## `React.js`에서 스타일 작성법
+## `React`에서 스타일 작성법
 
 ### 스타일 어트리뷰트
 
-- `HTML`에서 작성하는 것처럼 `style` 어트리뷰트를 사용하지만, 문자열이 아닌 `React.js`의 프로퍼티 네이밍 규칙을 준수하는 `JavaScript` 객체를 전달합니다.
+- `HTML`에서 작성하는 것처럼 `style` 어트리뷰트를 사용하지만, 문자열이 아닌 `React`의 프로퍼티 네이밍 규칙을 준수하는 `JavaScript` 객체를 전달합니다.
 
 ### `CSS in JavaScript`
 

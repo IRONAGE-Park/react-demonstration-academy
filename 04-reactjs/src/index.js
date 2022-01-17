@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// React.js의 모듈 불러옴
+// React의 모듈 불러옴
 // require와 같이 모듈을 불러오는 코드
 // 모듈 이름만 사용해서 불러오면 npm을 통하여 의존 중인 외부 패키지 모듈
 // 경로를 지정해서 불러오면 프로젝트 내의 모듈
