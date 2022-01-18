@@ -32,6 +32,26 @@ yarn add @mui/material @emotion/react @emotion/styled
 
   - 배열을 다루는 예시 코드
 
+## `JavaScript`(`ES6`)의 `Spread` 연산자(전개 연산자)
+
+- [MDN 문서 - 전개 구문](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+- [Velog - 전개 연산자](https://velog.io/@recordboy/%EC%A0%84%EA%B0%9C-%EC%97%B0%EC%82%B0%EC%9E%90Spread-Operator)
+
+- `...` 연산을 사용하면 배열이나 객체의 요소를 펼칠 수 있습니다.
+- 이를 사용하여 객체나 배열의 내용을 손 쉽게 복사할 수 있습니다.
+- 이 프로젝트에서는 `FunctionCheckboxList`에서 하위 컴포넌트인 `FunctionCheckbox`로 이벤트 리스너 함수를 전달할 때, 배열의 값을 `map` 함수로 변경할 때 용이하게 사용하였습니다.
+
+## `JavaScript`(`ES6`)의 `Destructuring` 연산자(구조 분해 할당, 비구조화 할당)
+
+- [MDN 문서 - 구조 분해 할당](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+- [Guidebook - 비구조화 할당](https://learnjs.vlpt.us/useful/06-destructuring.html)
+
+- `const { }`, `const []` 연산을 사용하여 객체에서 특정 값만 가져올 수 있습니다.
+- 이를 사용하여 객체나 배열의 내용 중 일부를 손 쉽게 가져올 수 있습니다.
+- 객체의 경우 `const { property1, property2 }` 연산을 사용하면 전달받는 객체에 `property1`의 키를 가진 값과, `property2`의 키를 가진 값이 할당됩니다. 키의 이름이 객체에 존재하지 않으면 `undefined`가 할당됩니다.
+- 배열의 경우 `const [name1, name2]` 연산을 사용하면 `name1`에 첫 번째 요소, `name2`에 두 번째 요소가 할당되며, 그 이상도 가능합니다.
+- 이 프로젝트에서는 `FunctionCheckbox`에서 `props`를 가져올 때와, `useState` 함수에서 상태와 `setState` 함수를 가져올 때 사용합니다.
+
 ## 폴더 구조
 
 - [`/src/index.js`](./src/index.js)

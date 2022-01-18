@@ -21,6 +21,7 @@ const MovieList = ({ movieList }) => {
     <div>
       {movieList.map((movieItem) => {
         return <Movie key={movieItem.title} {...movieItem} />;
+        // 이렇게 props로 {...movieItem}을 넣어주면, movieItem 객체가 키의 이름 그대로 props를 전달.
       })}
     </div>
   );
