@@ -1,7 +1,7 @@
 import { StyleApp, StyleAppContent } from "./App.style";
 import MovieContainer from "./containers/MovieContainer";
 
-function App() {
+const App = () => {
   return (
     <StyleApp>
       <StyleAppContent>

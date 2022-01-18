@@ -5,6 +5,8 @@ export const StyleMovieList = styled.div`
 `;
 
 export const StyleMovieItem = styled.div`
+  position: relative;
+
   display: flex;
   align-items: center;
 
@@ -65,4 +67,11 @@ export const StyleMovieDirector = styled.p`
   color: #999;
 
   margin-top: 40px;
+`;
+
+export const StyleMovieCheckboxArea = styled.div`
+  position: absolute;
+
+  top: 6px;
+  right: 6px;
 `;

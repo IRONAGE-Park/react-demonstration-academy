@@ -1,5 +1,7 @@
-const Checkbox = ({ checked, onChange }) => {
-  return <div></div>;
+import { StyleCheckbox } from "./Checkbox.style";
+
+const Checkbox = (props) => {
+  return <StyleCheckbox {...props} />;
 };
 
 export default Checkbox;
