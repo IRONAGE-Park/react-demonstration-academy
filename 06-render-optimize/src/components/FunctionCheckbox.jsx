@@ -124,6 +124,8 @@ export const FunctionCheckboxList = () => {
           checked={checkboxItem.checked}
           onChangeCheckbox={() => onChangeCheckbox(checkboxItem.id)}
           onClickChangeView={() => onClickChangeView(checkboxItem.id)}
+          // onChangeCheck 함수와 onClickChangeView 함수에는 id 매개변수를 넣어주어야 하는데,
+          // 클릭 이벤트로 넣을 때 id 매개변수를 전달하기 위해선 함수를 미리 만들어 놓아야 함
         />
       ))}
       {/* 배열 내장 함수인 map으로 컴포넌트를 반환하게 되면 리스트로 출력 */}
