@@ -56,6 +56,19 @@ yarn add -D http-proxy-middleware
 - 모듈 설치 후 [`/src/setupProxy.js`](./src/setupProxy.js) 파일 생성 후 코드 작성
 - 개발 서버 재실행
 
+## `Promise`와 `async` / `await`
+
+- `Promise`는 최신 문법으로 비동기를 사용하기 위해 정한 비동기 작성법
+- `async` / `await`는 `Promise` 사용 시 발생하는 콜백 지옥(중첩) 코드를 해결하기 위해 동기 코드인 것처럼 보이게 하는 키워드
+- `async` 함수는 `Promise`를 반환하는 함수로 바뀌게 됨
+
+### 참고
+
+- [`MDN` - `Promise`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [`MDN` - `async`와 `await`](https://developer.mozilla.org/ko/docs/Learn/JavaScript/Asynchronous/Async_await)
+- [`Promise`와 `async`, `await` 차이](https://velog.io/@pilyeooong/Promise%EC%99%80-asyncawait-%EC%B0%A8%EC%9D%B4%EC%A0%90)
+- [`async`와 `await`](https://ko.javascript.info/async-await)
+
 ## 폴더 구조
 
 - [`/src/App.js`](./src/App.js)
@@ -96,3 +109,4 @@ yarn add -D http-proxy-middleware
   - `fetch API`를 통해 외부 `API`에 데이터 요청하는 함수
   - `async await`를 사용해 콜백 함수 형태를 제거함
   - `process.env.REACT_APP_이름`으로 환경 변수 사용
+  - `Promise`와 `async` / `await`를 비교한 소스 코드 작성
