@@ -60,7 +60,7 @@ yarn add -D http-proxy-middleware
 
 - [`/useArray.js`](./useArray.js)
 
-  - 배열을 다루는 예시 코드
+  - 배열 내장 함수 `concat`, `filter`을 다루는 예시 코드
 
 - 추가: `Array.prototype.concat`
 - 변경: `Array.prototype.map`
@@ -72,8 +72,8 @@ yarn add -D http-proxy-middleware
 ## `React.js` 및 개발 참고 자료
 
 - [IT 개발자와 일할 때 필요한 모든 개발 지식 A to Z](https://www.grabbing.me/IT-A-to-Z-By-1e1fbc981b7c4c03ac44943085ac8304)
-- [`MDN` `JavaScript` 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript)
-- [`MDN` `CSS` 문서](https://developer.mozilla.org/ko/docs/Web/CSS)
+- [`MDN` - `JavaScript` 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript)
+- [`MDN` - `CSS` 문서](https://developer.mozilla.org/ko/docs/Web/CSS)
 - [`SCSS` 완전 정복](https://heropy.blog/2018/01/31/sass/)
 - [`Codesandbox`](https://codesandbox.io/s/elastic-wescoff-e9g0p)
 - [`React` 공식 문서](https://ko.reactjs.org/docs/getting-started.html)
@@ -126,16 +126,45 @@ yarn add -D http-proxy-middleware
   - 데이터 추가 요청, 변경, 삭제 역할을 수행하는 함수를 작성
   - 전체 선택할 수 있는 [`Checkbox`](./src/components/Checkbox.jsx) 컴포넌트 렌더링
 
-- [`/src/components/RequestTest.jsx`](./src/components/RequestTest.jsx)
+- [`src/containers/MovieContainer.style.js`](./src/containers/MovieContainer.style.js)
 
-  - `XMLHttpRequest` 방식으로 요청 테스트하는 로직
-  - `fetch API` 방식으로 요청 테스트하는 로직
+  - [`MovieContainer`](./src/containers/MovieContainer.jsx)의 전체 선택 영역 스타일 컴포넌트를 선언
 
 - [`/src/components/Movie.jsx`](./src/components/Movie.jsx)
 
   - 외부 `API`를 통해 응답 받은 데이터를 렌더링하는 컴포넌트를 선언
-  - 렌더링 하는 컴포넌트를 리스트를 `props`로 받아 반복하여 렌더링하는 컴포넌트 선언
+  - 렌더링 하는 컴포넌트의 리스트를 `props`로 받아 반복하여 렌더링하는 컴포넌트 선언
   - 해당 컴포넌트의 불필요한 재렌더를 방지하기 위해 `memo` 함수를 적용한 컴포넌트 선언
+  - 상위에서 `checked`와 `checked`를 변경할 `onChange` 함수를 받아와 이를 표현하고 이벤트 리스너 등록하는 [`Checkbox`](./src/components/Checkbox.jsx) 컴포넌트를 렌더
+  - `Movie` 데이터의 `title` 프로퍼티의 값 내부에 `<b></b>` 태그가 삽입되어 있는데, 그냥 렌더링하면 태그의 이름이 그대로 출력되므로, `HTML` 요소로 표현하기 위해 `dangerouslySetInnerHTML` `props`로 전달
+
+- [`/src/components/Movie.style.js`](./src/components/Movie.style.js)
+
+  - [`Movie`](./src/components/Movie.jsx)와 리스트를 감싸는 스타일을 지정하는 컴포넌트와, 그 내부에 [`Checkbox`](./src/components/Checkbox.jsx) 컴포넌트의 위치를 잡는 스타일 컴포넌트 선언
+
+- [`/src/components/Checkbox.jsx`](./src/components/Checkbox.jsx)
+
+  - 체크박스 역할을 하는 컴포넌트 선언
+
+- [`/src/components/Checkbox.style.js`](./src/components/Checkbox.style.js)
+
+  - 체크박스의 스타일을 지정하기 위해 `@mui/material`의 `Checkbox`에 스타일을 적용한 컴포넌트 선언
+
+- [`/src/components/AppendButton.jsx`](./src/components/AppendButton.jsx)
+
+  - 영화 목록 추가 요청하는 함수를 실행할 버튼 컴포넌트 선언
+
+- [`/src/components/AppendButton.style.js`](./src/components/AppendButton.style.js)
+
+  - 버튼의 스타일을 지정하기 위해 `@mui/material`의 `ButtonBase`에 스타일을 적용한 컴포넌트 선언
+
+- [`/src/components/DeleteButton.jsx`](./src/components/DeleteButton.jsx)
+
+  - checked 상태인 영화 목록 삭제하는 함수를 실행할 버튼 컴포넌트 선언
+
+- [`/src/components/DeleteButton.style.js`](./src/components/DeleteButton.style.js)
+
+  - 버튼의 스타일을 지정하기 위해 `@mui/material`의 `ButtonBase`에 스타일을 적용한 컴포넌트 선언
 
 - [`/src/apis/fetch.js`](./src/apis/fetch.js)
 

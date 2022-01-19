@@ -1,5 +1,6 @@
 import { memo } from "react";
 // 불필요한 컴포넌트 재렌더 방지하는 memo 함수 가져옴
+
 import Checkbox from "./Checkbox";
 
 import {
@@ -33,6 +34,8 @@ const Movie = ({
       <StyleMovieContentBox>
         <StyleMovieAnchor href={link}>
           <StyleMovieTitle dangerouslySetInnerHTML={{ __html: title }} />
+          {/* HTML 태그 형태의 문자열을 그대로 출력하면 태그의 이름이 모두 노출되므로, */}
+          {/* dangerouslySetInnerHTML props로 전달 */}
           <StyleMovieSubtitle>{subtitle}</StyleMovieSubtitle>
           <StyleMovieDirector>감독: {director}</StyleMovieDirector>
         </StyleMovieAnchor>
