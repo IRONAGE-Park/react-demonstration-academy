@@ -74,7 +74,7 @@ export const requestPromise = new Promise((resolve, reject) => {
 });
 
 // 두 함수 모두 Promise를 반환하므로
-requestAsync.then()
-requestPromise.then()
+requestAsync.then(secondData => console.log(secondData));
+requestPromise.then(secondData => console.log(secondData));
 // 이렇게 then을 사용하여 반환 받을 수 있음
 // then 안에 들어가는 매개변수는 resolve를 내에 넣은 값이 전달
