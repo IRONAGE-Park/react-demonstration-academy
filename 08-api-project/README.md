@@ -92,8 +92,14 @@ yarn add -D http-proxy-middleware
 
 ## 당장 참고하기 좋은 프로젝트
 
+- `JPG`, `PNG`, `SVG`의 차이
 - `Todo List` 만들기
-- 검색창 구현 및 `UX/UI`, 웹 접근성
+- 검색창(자동완성) 구현 및 `UX/UI`, 웹 접근성
+- `Server side Rendering`(`SSR`)
+- `Code spliting`
+- `Virtual list render` 구현
+- `Lazy load`
+- 무한 스크롤(`infinite scroll`) 구현
 - `Text Editor` 만들기
 - 디자인 시스템 구현
 - 외주 및 서비스 개발
