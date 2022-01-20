@@ -69,6 +69,49 @@ yarn add -D http-proxy-middleware
 - 그 외 추가 계산을 위한 함수
   - `Array.prototype.reduce`, `Array.prototype.every`, `Array.prototype.some` 등
 
+## `useState`의 동작 순서
+
+- `useState`로 반환받은 `setter` 함수는 완전히 동기적으로(순차적으로) 동작하지 않습니다.
+- `setState` 함수에 값을 매개변수로 넣어서 호출하면, 이는 `React`에 해당 값으로 변경하라는 동작을 요청하는 행위와 같습니다.
+
+  - 따라서 `setState`가 연속해서 호출되면, `React`에서 첫 번째 동작 요청 행위와, 두 번째 동작 요청 행위가 모두 실행되지만 `setState`에 넘어간 값이 한 상태를 기준으로 동작하기 때문에, 두 번쨰 동작 요청 행위만 실행된 것으로 판단합니다.
+
+- 이에 `setState` 함수에 콜백 함수를 매개변수로 넣어서 호출하는 방법이 있습니다.
+  - 콜백 함수의 인수로는 이전 상태가 넘어오며, 이전 상태를 통해 다음 상태를 연산하는 로직을 여러 번 호출하여도 정상적으로 동작합니다.
+  - 이를 `Functional Update`라고 합니다.
+
+> 이는 상태를 유지해야 할 권리를 사용자가 아닌 `React`로 전환할 수 있게 만드는 기법입니다.
+
+> 또한 `setState`에 값을 매개변수로 넣으면, `React`에서 기존 값과 비교하는 연산이 발생할 수 있기 때문에 성능적인 측면에서 콜백 함수를 매개변수로 넣는 것이 유리합니다.
+
+### 참고
+
+- [`React` `Hook` `setState`에 함수 전달](https://developer-talk.tistory.com/m/252)
+- [`/src/infos/FunctionalUpdate.jsx`](./src/infos/FunctionalUpdate.jsx)
+- [`/src/containers/MovieSetCallback.jsx`](./src/containers/MovieSetCallback.jsx)
+
+## `input` 요소의 관리
+
+- `input` 요소를 상태(`state`)로 관리하여 변화마다 리렌더링 할 경우, 항상 최선의 선택은 아닙니다.
+- 꼭 실시간으로 변화를 감지해야 하는 경우가 아니라면, 값이 변경될 때마다 다른 컴포넌트의 리렌더 로직에도 영향을 끼치는 `input` 요소는 성능 저하로 작용하기 쉽습니다.
+- 이런 경우 `form` 태그의 `onSubmit`를 요소를 사용한 후 넘어오는 이벤트 객체 `e`로부터 `input` 요소를 추출하여 값에 접근하는 방식이나, `useRef`를 사용하는 등의 다른 방식을 통해서 충분히 구현할 수 있습니다.
+
+### 참고
+
+- [`/src/infos/InputManager.jsx`](./src/infos/InputManager.jsx)
+
+## `useCallback`, `useEffect`, `useMemo`의 효율성
+
+- 불필요한 데이터, 함수의 생성과, 값의 변화를 감지하는 점에서 굉장히 용이하고 효율적으로 사용할 수 있는 장점이 있습니다.
+- 하지만 이를 과다하게 사용할 경우 `React`에서 값을 비교, 체크해야할 요소가 늘어나 오히려 그 요소를 비교 연산하는데 시간과 비용을 더 많이 사용하게 되는 경우가 발생할 수 있습니다.
+
+> 항상 적절히 사용해야 하며, 특히 값의 변화를 감지하고 새로운 로직을 작성하는 `useEffect`의 사용을 최소화 해야 합니다.
+
+### 참고
+
+- [`React`에서 `Hook`의 올바른 사용](https://sangcho.tistory.com/entry/React-useEffect-4Tip)
+- [`Hook`이 실패한 설계인 이유?](<https://jong-hui.github.io/devlog/2021/01/08/(React)%ED%9B%85%EC%9D%B4-%EC%8B%A4%ED%8C%A8%ED%95%9C-%EC%84%A4%EA%B3%84%EC%9D%B8-%EC%9D%B4%EC%9C%A0-4%EA%B0%80%EC%A7%80/>)
+
 ## 폴더 구조
 
 - [`/src/App.js`](./src/App.js)
@@ -81,6 +124,11 @@ yarn add -D http-proxy-middleware
   - 응답 받은 데이터를 상태로 관리하여 [`Movies`](./src/components/Movie.jsx) 컴포넌트 렌더링
   - 데이터 추가 요청, 변경, 삭제 역할을 수행하는 함수를 작성
   - 전체 선택할 수 있는 [`Checkbox`](./src/components/Checkbox.jsx) 컴포넌트 렌더링
+
+- [`/src/containers/MovieSetCallback.jsx`](./src/containers/MovieSetCallback.jsx)
+
+  - [`MovieContainer`](./src/containers/MovieContainer.jsx) 컨테이너 컴포넌트에서, 상태를 관리하는 `setMovieList` 함수에 값이 아닌 콜백 함수를 매개변수로 넘기는 버전
+  - 콜백 함수로 `setState`를 사용하는 방법과 효율성 참고
 
 - [`src/containers/MovieContainer.style.js`](./src/containers/MovieContainer.style.js)
 
@@ -128,3 +176,16 @@ yarn add -D http-proxy-middleware
   - `async await`를 사용해 콜백 함수 형태를 제거함
   - `process.env.REACT_APP_이름`으로 환경 변수 사용
   - `qs` 모듈을 사용해 `URL`에 쿼리 첨부하여 요청
+
+- [`/src/infos/MovieSetCallback.jsx`](./src/infos/MovieSetCallback.jsx)
+
+  - [`MovieContainer`](./src/containers/MovieContainer.jsx) 컴포넌트 컨테이너의 `setMovieList`에 값을 매개변수로 넣는 방식이 아닌 콜백 함수를 매개변수로 넣는 방식을 채택한 코드
+  - 용이성을 표현
+
+- [`/src/infos/FunctionalUpdate.jsx`](./src/infos/FunctionalUpdate.jsx)
+
+  - `setState`의 동작 방식과 값으로 `Update`하는 것과 `Functional Update`의 차이를 표현한 코드 작성
+
+- [`/src/infos/InputManager.jsx`](./src/infos/InputManager.jsx)
+
+  - `input` 요소를 상태로 관리하는 방식과, 개선할 수 있는 방안의 대략적 소개
